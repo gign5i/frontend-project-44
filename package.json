@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/gign5i/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/gign5i/frontend-project-44/actions)",
-  "main": "index.js",
+  "main": "./src/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,6 +13,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "readline-sync": "^1.4.10"
   }
 }
