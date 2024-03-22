@@ -16,7 +16,7 @@ export default (rules, gameData) => {
     }
 
     const [question, rightAnswer] = [...gameData()];
-    console.log(`${question} - ?`);
+    console.log(`Question: ${question}`);
     const userAnswer = readlindeSync.question('Your answer: ');
 
     if (userAnswer === rightAnswer) {
