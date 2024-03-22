@@ -1,13 +1,12 @@
 import readlindeSync from 'readline-sync';
 import getName from './cli.js';
 
-export const startEngine = (rules, func) => {
+export default (rules, gameData) => {
   console.log('Welcome to the Brain Games!\n');
-  
-  const name = getName();
-  console.log(`Hello, ${name}!\n`);
 
-  console.log(`${rules}`);
+  const name = getName();
+
+  console.log(`Hello, ${name}!\n\n${rules}\n`);
 
   let rounds = 0;
   while (rounds < 4) {
@@ -16,7 +15,7 @@ export const startEngine = (rules, func) => {
       return;
     }
 
-    const [question, rightAnswer] = [...func()];
+    const [question, rightAnswer] = [...gameData()];
     console.log(`${question} - ?`);
     const userAnswer = readlindeSync.question('Your answer: ');
 
