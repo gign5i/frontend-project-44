@@ -2,9 +2,10 @@ import readlindeSync from 'readline-sync';
 import getName from './cli.js';
 
 export const startEngine = (rules, func) => {
-  console.log('Welcome to the Brain Games!');
+  console.log('Welcome to the Brain Games!\n');
+  
   const name = getName();
-  console.log(`Hello, ${name}!`);
+  console.log(`Hello, ${name}!\n`);
 
   console.log(`${rules}`);
 

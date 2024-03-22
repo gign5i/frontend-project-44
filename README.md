@@ -6,4 +6,5 @@
 
 Ссылка на аскинему (brain-calc): https://asciinema.org/a/orXIkiSpCCzNUDkQO71wkjrDD
 
-Ссылка на скинему (brain-even && brain-calc): https://asciinema.org/a/oYGgq7yaP8csHZs8lA5gvLybD
+Ссылка на аскинему (brain-gcd):  https://asciinema.org/a/DvZh2js241fkTtj3f5FIj5wDE
+
