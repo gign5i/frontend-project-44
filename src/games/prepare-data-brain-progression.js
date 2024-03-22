@@ -1,5 +1,5 @@
 export default () => {
-  const size = Math.floor(Math.random() * (6 - 5) + 5);
+  const size = Math.floor(Math.random() * (10 - 5) + 5);
 
   const adder = Math.floor(Math.random() * (5 - 2) + 2);
 

@@ -8,4 +8,4 @@
 
 Ссылка на аскинему (brain-gcd):  https://asciinema.org/a/DvZh2js241fkTtj3f5FIj5wDE
 
-Ссылка на аскинему (brain-progression): https://asciinema.org/a/QG4Q0BqMJh8dMMyiSXgIPl1OZ
+Ссылка на аскинему (brain-progression): https://asciinema.org/a/o4xPWu5dr8mjpDNYMQTg8GeYz
