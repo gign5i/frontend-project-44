@@ -3,12 +3,14 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/07287f2cff71e8e0ecf0/maintainability)](https://codeclimate.com/github/gign5i/frontend-project-44/maintainability)
 
 Установка:
-  При первом клонировании проекта необходимо ввести команду :
-- "make install
+- - При первом клонировании проекта необходимо ввести команду :
+- make install
 
 Запуск игры:
 Игра на указание четное ли число или нет:
+
 - brain-even
+
 Игра на вычисление выражения:
 - brain-calc
 Игра на нахождение НОД (наибольший общий делитель):
