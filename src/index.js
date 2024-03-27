@@ -1,30 +1,26 @@
 import readlindeSync from 'readline-sync';
-import getName from './cli.js';
 
-export default (rules, gameData) => {
-  console.log('Welcome to the Brain Games!\n');
+const countRounds = 3;
 
-  const name = getName();
+export default (gameRules, gameData) => {
+  console.log('Welcome to the Brain Games!');
+  console.log('May I have your name ?');
+  const name = readlindeSync.question('Your answer: ');
 
-  console.log(`Hello, ${name}!\n\n${rules}\n`);
+  console.log(`Hello, ${name}!`);
+  console.log(`${gameRules}`);
 
-  let rounds = 0;
-  while (rounds < 4) {
-    if (rounds === 3) {
-      console.log(`Congratulations, ${name}!`);
-      return;
-    }
-
+  for (let i = 0; i < countRounds; i += 1) {
     const [question, rightAnswer] = [...gameData()];
     console.log(`Question: ${question}`);
     const userAnswer = readlindeSync.question('Your answer: ');
-
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
-      rounds += 1;
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
+  console.log(`Congratulations, ${name}!`);
 };

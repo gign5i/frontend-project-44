@@ -1,21 +1,29 @@
-export default () => {
-  const operations = ['+', '-', '*'];
+import startEngine from '../index.js';
+import getRandomNumber from '../helper.js';
 
-  const opindex = Math.floor(Math.random() * 3);
-  const a = Math.floor(Math.random() * 100);
-  const b = Math.floor(Math.random() * 100);
+const operations = ['+', '-', '*'];
+const description = 'What is the result of the expression?';
 
-  const question = `${a} ${operations[opindex]} ${b}`;
-
+const getCorrectAnswer = (a, opIndex, b) => {
   let result = '';
-
-  if (operations[opindex] === '-') {
+  if (operations[opIndex] === '-') {
     result += a - b;
-  } else if (operations[opindex] === '+') {
+  } else if (operations[opIndex] === '+') {
     result += a + b;
-  } else if (operations[opindex] === '*') {
+  } else if (operations[opIndex] === '*') {
     result += a * b;
   }
-
-  return [question, result];
+  return result;
 };
+
+const getQuestionAndAnswer = () => {
+  let correctAnswer = '';
+  const opIndex = getRandomNumber(0, 3);
+  const a = getRandomNumber(0, 100);
+  const b = getRandomNumber(0, 100);
+  const question = `${a} ${operations[opIndex]} ${b}`;
+  correctAnswer += getCorrectAnswer(a, opIndex, b);
+  return [question, correctAnswer];
+};
+
+export default () => { startEngine(description, getQuestionAndAnswer); };

@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import prepareDataBrainCalc from '../src/games/prepare-data-brain-calc.js';
-import startEngine from '../src/index.js';
+import runGame from '../src/games/prepare-data-brain-calc.js';
 
-const calcGame = () => {
-  const rule = 'What is the result of the expression?';
-  startEngine(rule, prepareDataBrainCalc);
-};
-calcGame();
+runGame();

@@ -1,9 +1,9 @@
-export default () => {
-  let a = Math.floor(Math.random() * (10 - 1) + 1); // исключаем 0, поэтому от 1 - 10
-  let b = Math.floor(Math.random() * (10 - 1) + 1); // исключаем 0, поэтому от 1 - 10
-  let rightAnswer = '';
-  const question = `${a} ${b}`;
+import getRandomNumber from '../helper.js';
+import startEngine from '../index.js';
 
+const description = 'Find the greatest common divisor of given numbers.';
+
+const getCorretAnswer = (a, b) => {
   while (a !== b) {
     if (a > b) {
       a -= b;
@@ -11,8 +11,16 @@ export default () => {
       b -= a;
     }
   }
-
-  rightAnswer += a;
-
-  return [question, rightAnswer];
+  return a;
 };
+
+const getQuestionAndAnswer = () => {
+  const a = getRandomNumber(1, 10);
+  const b = getRandomNumber(1, 10);
+  let correctAnswer = '';
+  const question = `${a} ${b}`;
+  correctAnswer += getCorretAnswer(a, b);
+  return [question, correctAnswer];
+};
+
+export default () => { startEngine(description, getQuestionAndAnswer); };

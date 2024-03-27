@@ -1,28 +1,40 @@
-export default () => {
-  const size = Math.floor(Math.random() * (10 - 5) + 5);
+import startEngine from '../index.js';
+import getRandomNumber from '../helper.js';
 
-  const adder = Math.floor(Math.random() * (5 - 2) + 2);
+const description = 'What number is missing in the progression?';
 
-  const firstNumber = Math.floor(Math.random() * (30 - 1) + 1);
-
+const getProgression = (firstNumber, size, adder) => {
   const array = [firstNumber];
 
   for (let i = 1; i < size; i += 1) {
     array[i] = array[i - 1] + adder;
   }
+  return array;
+};
 
-  const hideElement = Math.floor(Math.random() * size);
+const getQuestionAndAnswer = () => {
+  const size = getRandomNumber(5, 10);
 
-  let rightAnswer = '';
+  const adder = getRandomNumber(2, 5);
 
-  rightAnswer += `${array[hideElement]}`;
+  const firstNumber = getRandomNumber(1, 30);
 
-  array[hideElement] = '..';
+  const progression = getProgression(firstNumber, size, adder);
+
+  const hideElement = getRandomNumber(0, size);
+
+  let correctAnswer = '';
+
+  correctAnswer += `${progression[hideElement]}`;
+
+  progression[hideElement] = '..';
 
   let question = '';
 
   for (let i = 0; i < size; i += 1) {
-    question += `${array[i]} `;
+    question += `${progression[i]} `;
   }
-  return [question, rightAnswer];
+  return [question, correctAnswer];
 };
+
+export default () => { startEngine(description, getQuestionAndAnswer); };
