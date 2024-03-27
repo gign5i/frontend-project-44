@@ -4,14 +4,16 @@ import startEngine from '../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const getCorretAnswer = (a, b) => {
-  while (a !== b) {
-    if (a > b) {
-      a -= b;
+  let firstNumber = a;
+  let secondNumber = b;
+  while (firstNumber !== secondNumber) {
+    if (firstNumber > secondNumber) {
+      firstNumber -= secondNumber;
     } else {
-      b -= a;
+      secondNumber -= firstNumber;
     }
   }
-  return a;
+  return firstNumber;
 };
 
 const getQuestionAndAnswer = () => {
