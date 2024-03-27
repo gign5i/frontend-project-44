@@ -32,6 +32,7 @@
 127 131 137 139 149 151 157 163 
 167 173 179 181 191 193 197 199`
 
+
 Аскинемы:
 
 - Ссылка на аскинему (brain-even): https://asciinema.org/a/qvxptK11nuSCyLl77js49nWXT
